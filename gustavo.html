@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>puta que pariu</title>
+</head>
+<body>
+
+    <h1>Orçamento dos sensores</h1>
+
+    <h2>Preço fixo</h2>
+
+    <img src="lm35.jpeg" alt="Sensor LM35" style="height: 150px;">
+        <br>
+            Sensor de temperatura Lm35 sai por: <b>R$15,00</b>
+        <br>
+
+    <img src="Dht11.jpg" alt="Sensor DHT11" style="height: 150px">
+        <br>
+            Sensor de Umidade e Temperatura DHT11 sai por: <b>R$ 13,90</b> 
+
+    <br><br>
+
+    <h4>quantos sensores você quer?</h4>
+
+    Sensor <b>LM35</b>:
+    <input id="sensor_lm35" type="text" placeholder= "Insira aqui">
+
+    <br><br>
+
+    Sensor <b>DHT11</b>:
+    <input id="sensor_dht11" type="text" placeholder= "Insira aqui">
+
+    <br><br>
+
+    <button id="total()">
+        Calcular
+    </button>
+
+    <div id="div_msg"></div>
+
+</body>
+</html>
+
+<script>
+
+    function total() {
+
+        var lm35 = 15.00;
+        var dht11 = 13.90;
+        var qtdLm35 = Number (sensor_lm35.value) * lm35;
+        var qtdDht11 = Number (sensor_dht11.value) * dht11;
+        var resultado = qtdLm35 + qtdDht11;
+
+        var totalSensores = Number (sensor_lm35.value) + (sensor_dht11.value);
+
+        div_msg.innerHTML = Você solicitou: ${totalSensores} sensores. <br>;
+        div_msg.innerHTML = Foram ${sensor_lm35.value} sensores LM35, no valor total de: ${qtdLm35}. <br>;
+        div_msg.innerHTML = Foram ${sensor_dht11.value} sensores DHT11, no valor total de: ${qtdDht11}.<br><br>;
+        div_msg.innerHTML = O valor total da sua compra é de: ${resultado}.;
+
+    }
+
+
+</script>
